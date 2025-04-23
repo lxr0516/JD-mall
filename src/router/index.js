@@ -11,41 +11,41 @@ import Spring from "@/views/outing/Spring.vue";
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path:'/',
-    name:'JDVue',
-    component:JDVue
-  },
-  {
-    path:'/Nav',
-    name:'Nav',
-    component:Nav
-  },
-  {
-    path: '/Search',
-    name:'Search',
-    component:search
-  },
-  {
-    path: '/Content',
-    name:'Content',
-    component:Content
-  },
-  {
-    path: '/ShopContent',
-    name:'ShopContent',
-    component: ShopContent
-  },
-  {
-    path: '/Spring',
-    name: 'Spring',
-    component: Spring
-  }
+    {
+        path: '/',
+        name: 'JDVue',
+        component: JDVue
+    },
+    {
+        path: '/Nav',
+        name: 'Nav',
+        component: Nav
+    },
+    {
+        path: '/Search',
+        name: 'Search',
+        component: search
+    },
+    {
+        path: '/Content',
+        name: 'Content',
+        component: Content
+    },
+    {
+        path: '/ShopContent',
+        name: 'ShopContent',
+        component: ShopContent
+    },
+    {
+        path: '/Spring',
+        name: 'Spring',
+        component: Spring
+    }
 
 ]
 
 const router = new VueRouter({
-  routes
+    routes
 })
 
 

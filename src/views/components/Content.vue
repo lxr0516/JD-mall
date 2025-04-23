@@ -18,7 +18,7 @@
             </ul>
           </div>
           <div class="shopBottomList">
-            <div class="BottomL" >
+            <div class="BottomL">
               <div class="goods" @mouseleave="onPlay">
                 <img :src="goodsArr[index].src" alt="">
               </div>
@@ -30,27 +30,27 @@
                 ></li>
               </ul>
             </div>
-            <div class="BottomM" >
-              <div class="box1"v-for="list in shopBottomM">
-                <div class="name">{{list.title}}</div>
+            <div class="BottomM">
+              <div class="box1" v-for="list in shopBottomM">
+                <div class="name">{{ list.title }}</div>
                 <div class="img1"><img :src="list.imgSrc" alt=""></div>
-                <div class="price">{{list.price}}</div>
+                <div class="price">{{ list.price }}</div>
               </div>
             </div>
-            <div class="BottomR" >
+            <div class="BottomR">
               <div class="bigB1" :style="move">
-              <div class="bigB" v-for="(val,idx) in serveArrNum" >
-                <ul class="box2" v-for="(list,idx) in serveArr1"  v-if="idx<(index1+1)*12&&idx>=(index1*12)">
-                  <li class="img2">
-                    <img :src="list.imgSrc" alt="">
-                  </li>
-                  <li>{{list.title}}</li>
-                </ul>
-              </div>
+                <div class="bigB" v-for="(val,idx) in serveArrNum">
+                  <ul class="box2" v-for="(list,idx) in serveArr1" v-if="idx<(index1+1)*12&&idx>=(index1*12)">
+                    <li class="img2">
+                      <img :src="list.imgSrc" alt="">
+                    </li>
+                    <li>{{ list.title }}</li>
+                  </ul>
+                </div>
               </div>
               <div class="button">
-                <button @click="ButtonL" :class="ac"> < </button>
-                <button @click="ButtonR" :class="acr"> > </button>
+                <button @click="ButtonL" :class="ac"> <</button>
+                <button @click="ButtonR" :class="acr"> ></button>
               </div>
             </div>
 
@@ -118,31 +118,29 @@
       </div>
     </div>
 
-  <!--    <div>
-      <ul>
-        <li v-for="item in goodsArr" :key="goodsArr.id">
-          <img :src="item" alt="">
-        </li>
-      </ul>
-    </div>-->
+    <!--    <div>
+        <ul>
+          <li v-for="item in goodsArr" :key="goodsArr.id">
+            <img :src="item" alt="">
+          </li>
+        </ul>
+      </div>-->
   </div>
 </template>
 
 <script>
 
-import {add} from "core-js/internals/set-helpers";
-
 export default {
   name: "Content",
   data() {
     return {
-      ac:'none',
-      acr:'block',
-      move:0,
-      index:0,
-      index1:0,
-      timer:0,
-      serveArrNum:'',
+      ac: 'none',
+      acr: 'block',
+      move: 0,
+      index: 0,
+      index1: 0,
+      timer: 0,
+      serveArrNum: '',
       outArr: [
         {imgSrc: require('@/assets/images/icon/icon (01).png'), listArr: ['家用电器']},
         {imgSrc: require('@/assets/images/icon/icon (02).png'), listArr: ['手机', '运营商', '数码']},
@@ -186,58 +184,58 @@ export default {
           price: '一二三四'
         }
       ],
-      serveArr1:[
-        {imgSrc:require('@/assets/images/rightList/天天领好礼.png'),title:'天天领好礼'},
-        {imgSrc:require('@/assets/images/rightList/京豆.png'),title:'京豆'},
-        {imgSrc:require('@/assets/images/rightList/充值中心.png'),title:'充值中心'},
-        {imgSrc:require('@/assets/images/rightList/国家补贴.png'),title:'国家补贴'},
-        {imgSrc:require('@/assets/images/rightList/企采返E卡.png'),title:'企采返E卡'},
-        {imgSrc:require('@/assets/images/rightList/云建站.png'),title:'云建站'},
-        {imgSrc:require('@/assets/images/rightList/政府消费券.png'),title:'政府消费券'},
-        {imgSrc:require('@/assets/images/rightList/酒店.png'),title:'酒店'},
-        {imgSrc:require('@/assets/images/rightList/游戏.png'),title:'游戏'},
-        {imgSrc:require('@/assets/images/rightList/问医生.png'),title:'问医生'},
-        {imgSrc:require('@/assets/images/rightList/金条借款.png'),title:'金条借款'},
-        {imgSrc:require('@/assets/images/rightList/信用卡.png'),title:'信用卡'},
+      serveArr1: [
+        {imgSrc: require('@/assets/images/rightList/天天领好礼.png'), title: '天天领好礼'},
+        {imgSrc: require('@/assets/images/rightList/京豆.png'), title: '京豆'},
+        {imgSrc: require('@/assets/images/rightList/充值中心.png'), title: '充值中心'},
+        {imgSrc: require('@/assets/images/rightList/国家补贴.png'), title: '国家补贴'},
+        {imgSrc: require('@/assets/images/rightList/企采返E卡.png'), title: '企采返E卡'},
+        {imgSrc: require('@/assets/images/rightList/云建站.png'), title: '云建站'},
+        {imgSrc: require('@/assets/images/rightList/政府消费券.png'), title: '政府消费券'},
+        {imgSrc: require('@/assets/images/rightList/酒店.png'), title: '酒店'},
+        {imgSrc: require('@/assets/images/rightList/游戏.png'), title: '游戏'},
+        {imgSrc: require('@/assets/images/rightList/问医生.png'), title: '问医生'},
+        {imgSrc: require('@/assets/images/rightList/金条借款.png'), title: '金条借款'},
+        {imgSrc: require('@/assets/images/rightList/信用卡.png'), title: '信用卡'},
 
-        {imgSrc:require('@/assets/images/rightList/珠宝馆.png'),title:'珠宝馆'},
-        {imgSrc:require('@/assets/images/rightList/买贵双倍赔.png'),title:'买贵双倍赔'},
-        {imgSrc:require('@/assets/images/rightList/企业计划购.png'),title:'企业计划购'},
-        {imgSrc:require('@/assets/images/rightList/加油卡.png'),title:'加油卡'},
-        {imgSrc:require('@/assets/images/rightList/企业购.png'),title:'企业购'},
-        {imgSrc:require('@/assets/images/rightList/京东奢品.png'),title:'京东奢品'},
-        {imgSrc:require('@/assets/images/rightList/电脑馆.png'),title:'电脑馆'},
-        {imgSrc:require('@/assets/images/rightList/礼品卡.png'),title:'礼品卡'},
-        {imgSrc:require('@/assets/images/rightList/爱回收.png'),title:'爱回收'},
+        {imgSrc: require('@/assets/images/rightList/珠宝馆.png'), title: '珠宝馆'},
+        {imgSrc: require('@/assets/images/rightList/买贵双倍赔.png'), title: '买贵双倍赔'},
+        {imgSrc: require('@/assets/images/rightList/企业计划购.png'), title: '企业计划购'},
+        {imgSrc: require('@/assets/images/rightList/加油卡.png'), title: '加油卡'},
+        {imgSrc: require('@/assets/images/rightList/企业购.png'), title: '企业购'},
+        {imgSrc: require('@/assets/images/rightList/京东奢品.png'), title: '京东奢品'},
+        {imgSrc: require('@/assets/images/rightList/电脑馆.png'), title: '电脑馆'},
+        {imgSrc: require('@/assets/images/rightList/礼品卡.png'), title: '礼品卡'},
+        {imgSrc: require('@/assets/images/rightList/爱回收.png'), title: '爱回收'},
       ],
-    //   可以用这种形式遍历图片
-    /* goodsArr:[
-         require('@/assets/images/leftList/卡萨帝洗衣机.jpg'),
-         require('@/assets/images/leftList/卡萨帝洗衣机.jpg'),
-         require('@/assets/images/leftList/卡萨帝洗衣机.jpg'),
-         require('@/assets/images/leftList/卡萨帝洗衣机.jpg'),
-         require('@/assets/images/leftList/卡萨帝洗衣机.jpg'),
-]*/
-    goodsArr:[
-       {src:require('@/assets/images/leftList/卡萨帝洗衣机.jpg')},
-       {src:require('@/assets/images/leftList/小天鹅洗衣机.jpg')},
-       {src:require('@/assets/images/leftList/多功能锅.jpg')},
-       {src:require('@/assets/images/leftList/耳机.jpg')},
-       {src:require('@/assets/images/leftList/福袋.jpg')},
-       {src:require('@/assets/images/leftList/躺椅.jpg')}
-    ]
+      //   可以用这种形式遍历图片
+      /* goodsArr:[
+           require('@/assets/images/leftList/卡萨帝洗衣机.jpg'),
+           require('@/assets/images/leftList/卡萨帝洗衣机.jpg'),
+           require('@/assets/images/leftList/卡萨帝洗衣机.jpg'),
+           require('@/assets/images/leftList/卡萨帝洗衣机.jpg'),
+           require('@/assets/images/leftList/卡萨帝洗衣机.jpg'),
+  ]*/
+      goodsArr: [
+        {src: require('@/assets/images/leftList/卡萨帝洗衣机.jpg')},
+        {src: require('@/assets/images/leftList/小天鹅洗衣机.jpg')},
+        {src: require('@/assets/images/leftList/多功能锅.jpg')},
+        {src: require('@/assets/images/leftList/耳机.jpg')},
+        {src: require('@/assets/images/leftList/福袋.jpg')},
+        {src: require('@/assets/images/leftList/躺椅.jpg')}
+      ]
 
     }
   },
-  methods:{
+  methods: {
     /*计算遍历次数*/
     serveArr1Num() {
-      this.serveArrNum = Number(parseInt((this.serveArr1.length-1)/ 12 + 1))
+      this.serveArrNum = Number(parseInt((this.serveArr1.length - 1) / 12 + 1))
     },
-    ButtonR(){
+    ButtonR() {
       this.index1++
-      this.move = `transform: translateX(${-240*this.index1}px)`
-      if(this.index1>this.serveArrNum-2){
+      this.move = `transform: translateX(${-240 * this.index1}px)`
+      if (this.index1 > this.serveArrNum - 2) {
         this.acr = 'none'
         this.ac = 'block'
         // console.log(this.index1)
@@ -245,10 +243,10 @@ export default {
         // this.index1=0
       }
     },
-    ButtonL(){
+    ButtonL() {
       this.index1--
-      this.move = `transform: translateX(${+240*this.index1}px)`
-      if(this.index1==0){
+      this.move = `transform: translateX(${+240 * this.index1}px)`
+      if (this.index1 == 0) {
         this.acr = 'block'
         this.ac = 'none'
         // console.log(this.index1)
@@ -256,26 +254,26 @@ export default {
       }
     },
     // 轮播图部分
-    changeImg(aaa){
-     this.index=aaa;
+    changeImg(aaa) {
+      this.index = aaa;
       clearInterval(this.timer)
     },
-    Next(){
+    Next() {
       this.index++
-      if(this.index==this.goodsArr.length){
-        this.index=0
+      if (this.index == this.goodsArr.length) {
+        this.index = 0
       }
     },
-    onPlay(){
+    onPlay() {
       clearInterval(this.timer)
-      this.timer = setInterval(this.Next,1500)
+      this.timer = setInterval(this.Next, 1500)
     }
   },
   beforeMount() {
     this.serveArr1Num()
   },
   mounted() {
-   this.onPlay()
+    this.onPlay()
     console.log(this.serveArrNum)
     console.log(typeof this.serveArrNum)
   },
@@ -287,23 +285,28 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.bigB li:hover,.box1:hover,.login1 img:hover,.login1 div:hover,.shopTopList li:hover,.rShop:hover,
-.user:hover,.vipS:hover,.goods:hover,.login3-1:hover,.lTop:hover{
+.bigB li:hover, .box1:hover, .login1 img:hover, .login1 div:hover, .shopTopList li:hover, .rShop:hover,
+.user:hover, .vipS:hover, .goods:hover, .login3-1:hover, .lTop:hover {
   cursor: pointer;
 }
-.bigB li:hover{
+
+.bigB li:hover {
   color: red;
 }
-.rShop:hover{
+
+.rShop:hover {
   color: red;
- text-decoration:underline;
+  text-decoration: underline;
 }
-.block{
+
+.block {
   display: block;
 }
-.none{
+
+.none {
   display: none;
 }
+
 .top {
   height: 424px;
   background: transparent;
@@ -408,14 +411,16 @@ export default {
           height: 320px;
           //background: red;
         }
+
         //轮播图部分
-        .BottomL{
-          .goods img{
+        .BottomL {
+          .goods img {
             width: 240px;
             height: 320px;
             position: relative;
           }
-          .change{
+
+          .change {
             width: 240px;
             height: 40px;
             display: flex;
@@ -425,17 +430,18 @@ export default {
             position: absolute;
             bottom: 34px;
 
-            li{
+            li {
               width: 10px;
               height: 10px;
               border-radius: 50%;
               background: #ffffff;
-              border: 1px solid rgba(0,0,0,.2);
+              border: 1px solid rgba(0, 0, 0, .2);
               margin-left: 5px;
 
             }
-            .active{
-              background:red;
+
+            .active {
+              background: red;
               width: 20px;
               height: 10px;
               border-radius: 30px;
@@ -444,38 +450,44 @@ export default {
 
 
         }
-        .BottomM{
+
+        .BottomM {
           display: flex;
           justify-content: space-evenly;
           align-content: space-evenly;
           flex-wrap: wrap;
-          .box1{
+
+          .box1 {
             width: 112px;
             height: 152px;
-            background: linear-gradient(to bottom,rgb(254,242,236),rgb(255,255,255));
+            background: linear-gradient(to bottom, rgb(254, 242, 236), rgb(255, 255, 255));
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
             border-radius: 5px;
-            img{
+
+            img {
               width: 82px;
               height: 82px;
             }
           }
         }
-        .BottomR{
+
+        .BottomR {
           display: flex;
           position: relative;
           overflow: hidden;
-          .bigB1{
+
+          .bigB1 {
             height: 320px;
-            background:rgb(247,248,252);
+            background: rgb(247, 248, 252);
             display: flex;
             position: absolute;
             z-index: 99;
           }
-          .bigB{
+
+          .bigB {
             width: 240px;
             height: 320px;
             //background: yellow;
@@ -483,26 +495,29 @@ export default {
             justify-content: space-evenly;
             flex-wrap: wrap;
             align-content: flex-start;
-            >ul{
+
+            > ul {
               margin-top: 6px;
             }
           }
 
-         .box2{
-           width: 70px;
-           height: 70px;
-           //background: #29519d;
-           display: flex;
-           flex-direction: column;
-           justify-content: center;
-           align-items: center;
-           font-size: 12px;
-           img{
-             width: 36px;
-             height: 36px;
-           }
-         }
-          .button{
+          .box2 {
+            width: 70px;
+            height: 70px;
+            //background: #29519d;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+
+            img {
+              width: 36px;
+              height: 36px;
+            }
+          }
+
+          .button {
             width: 240px;
             height: 30px;
             position: absolute;
@@ -511,33 +526,37 @@ export default {
             margin-top: 64%;
             //background: aqua;
             z-index: 100;
-            button{
+
+            button {
               width: 20px;
               height: 20px;
               background: rgba(204, 204, 204, 0.58);
               font-size: 16px;
               color: rgba(255, 255, 255, 0.97);
               border: none;
-              text-align:center;
-              &:first-child{
+              text-align: center;
+
+              &:first-child {
                 border-radius: 20px 100px 100px 20px;
                 position: absolute;
                 margin-left: -5px;
 
               }
-              &:last-child{
+
+              &:last-child {
                 border-radius: 100px 20px 20px 100px;
                 position: absolute;
                 margin-left: 225px;
               }
             }
-        }
+          }
 
         }
       }
 
     }
-//登录板块
+
+    //登录板块
     .rBox {
       display: flex;
       flex-direction: column;
@@ -741,37 +760,42 @@ export default {
       }
     }
   }
-//伸缩图部分
+
+  //伸缩图部分
   .lTop {
     position: absolute;
     width: 108px;
     height: 432px;
     left: -108px;
     //background: rgba(163, 236, 106, 0.79);
-    .imgQ{
+    .imgQ {
       width: 108px;
       height: 432px;
-      img{
+
+      img {
         width: 100%;
         height: 100%;
       }
     }
-    .imgH{
-      width:1px;
+
+    .imgH {
+      width: 1px;
       height: 432px;
       position: absolute;
       top: 0;
       left: 106px;
       overflow: hidden;
-      transition:all .5s;
+      transition: all .5s;
       z-index: 101;
-      img{
+
+      img {
         width: 792px;
         height: 432px;
       }
     }
   }
-  .lTop:hover .imgH{
+
+  .lTop:hover .imgH {
     width: 792px;
   }
 

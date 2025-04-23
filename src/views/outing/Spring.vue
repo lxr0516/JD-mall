@@ -1,8 +1,8 @@
 <template>
-<div>
-  <div class="img"><img src="@/assets/images/spring img/春日出游1.png" alt=""></div>
-  <div class="img1"><img src="@/assets/images/spring img/春日出游2.png" alt=""></div>
-</div>
+  <div>
+    <div class="img"><img src="@/assets/images/spring img/春日出游1.png" alt=""></div>
+    <div class="img1"><img src="@/assets/images/spring img/春日出游2.png" alt=""></div>
+  </div>
 </template>
 
 <script>
@@ -12,18 +12,21 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.img{
-  width:100%;
+.img {
+  width: 100%;
   height: 165px;
-  img{
+
+  img {
     width: 100%;
     height: 100%;
   }
 }
-.img1{
+
+.img1 {
   width: 100%;
   height: 700px;
-  img{
+
+  img {
     width: 100%;
     height: 100%;
   }
